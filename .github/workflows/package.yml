@@ -1,0 +1,12 @@
+name: Build AUR packages for Secuity Boot
+on: push
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./pakage-action
+      - uses: actions/upload-artifact@v2
+        with:
+          path: /shim-signed-15.f8-2-any.pkg.tar.zst
+	

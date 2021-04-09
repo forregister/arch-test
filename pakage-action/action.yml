@@ -1,0 +1,14 @@
+name: Package action
+description: Build shim-signed package
+author: For Register
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+
+branding:
+  icon: "activity"
+  color: "blue"
+
+ 	 
+
