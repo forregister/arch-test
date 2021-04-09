@@ -8,4 +8,4 @@ jobs:
       - uses: ./pakage-action
       - uses: actions/upload-artifact@v2
         with:
-          path: /shim-signed-15.f8-2-any.pkg.tar.zst	
+          path: ./shim-signed-15.f8-2-any.pkg.tar.zst	
