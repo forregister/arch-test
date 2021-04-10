@@ -1,0 +1,10 @@
+name: 'Packages test action'
+description: 'Testing packages built for Archlinux'
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+
+branding:
+  icon: "play"
+  color: "green"

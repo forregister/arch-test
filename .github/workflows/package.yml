@@ -1,11 +1,31 @@
-name: Build AUR packages for Secuity Boot
+name: Build packages for Security Boot
 on: push
 jobs:
-  package:
+  build_packages:
+    name: shim-signed(AUR) package
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: ./pakage-action
-      - uses: actions/upload-artifact@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build packages 
+        uses: ./pakage-action
+      - name: Upload built packages
+        uses: actions/upload-artifact@v2
         with:
-          path: ./shim-signed-15.f8-2-any.pkg.tar.zst	
+          name: packages
+          path: ./*.pkg.tar.zst
+          retention-days: 1
+
+  test_packages:	
+    name: Testing packages
+    needs: build_packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download packages 
+        uses: actions/download-artifact@v2
+        with:
+          name: packages
+          path: ${{ github.workspace }}
+      - name: Test package
+        uses: ./test-action   
+
