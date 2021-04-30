@@ -1,0 +1,3 @@
+[submodule "shim-signed"]
+	path = shim-signed
+	url = https://aur.archlinux.org/shim-signed.git
