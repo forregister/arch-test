@@ -30,4 +30,3 @@ jobs:
           path: ${{ github.workspace }}
       - name: Test package
         uses: ./test-action   
-

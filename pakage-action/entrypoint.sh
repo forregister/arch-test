@@ -9,6 +9,3 @@ echo "Copying packages"
 cp *.pkg.tar.zst /github/workspace/
 
 exit 0
-
-
-
